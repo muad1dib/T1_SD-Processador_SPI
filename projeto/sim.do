@@ -5,7 +5,7 @@ vmap work work
 
 set TOP_ENTITY {work.tb_memory}
 
-vlog -work work dual_ram_port_if.sv
+vlog -work work dual_port_ram_if.sv
 vlog -work work dual_port_ram.sv
 vlog -work work tb_memory.sv
 
@@ -27,3 +27,4 @@ run 100ns
 
 mem load -filltype value -filldata 5c -fillradix hexadecimal /tb_memory/ram/mem(88)
 run 100ns
+
