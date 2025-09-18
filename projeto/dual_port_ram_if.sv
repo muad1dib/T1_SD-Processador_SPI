@@ -1,10 +1,11 @@
 interface dual_port_ram_port_if #(
-    parameter ADDR_WIDTH = 8,
-    parameter DATA_WIDTH = 32,
-    parameter DEPTH = 1 << ADDR_WIDTH
+    parameter int ADDR_WIDTH = 8,
+    parameter int DATA_WIDTH = 32
 )(
-    input  logic clk
+    input logic clk
 );
+    
+    // Declaração dos sinais usando os parâmetros
     logic en;
     logic we;
     logic [ADDR_WIDTH-1:0] addr;
@@ -15,8 +16,10 @@ interface dual_port_ram_port_if #(
         input en, we, addr, wdata,
         output rdata
     );
+    
     modport CPU (
         output en, we, addr, wdata,
         input rdata
     );
+
 endinterface
