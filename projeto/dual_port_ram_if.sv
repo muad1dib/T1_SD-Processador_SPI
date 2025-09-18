@@ -5,7 +5,6 @@ interface dual_port_ram_port_if #(
     input logic clk
 );
     
-    // Declaração dos sinais usando os parâmetros
     logic en;
     logic we;
     logic [ADDR_WIDTH-1:0] addr;
