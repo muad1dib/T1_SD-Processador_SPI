@@ -1,3 +1,5 @@
+// Corrigido alguma coisas, agora se tá funcionando é outra história kkk
+
 module alu (
     input  logic        clock,
     input  logic        reset,
