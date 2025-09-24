@@ -1,4 +1,4 @@
-module barrel_shifter #(
+module shifter #(
     parameter REG_WIDTH = 32
 )(
     input logic clock,
