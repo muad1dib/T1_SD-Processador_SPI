@@ -4,8 +4,7 @@ module dual_port_ram #(
     parameter DEPTH = 1 << ADDR_WIDTH
 )(
     input  logic            clk,
-    dual_port_ram_port_if.MEM a,
-    dual_port_ram_port_if.MEM b
+    dual_port_ram_port_if.MEM a
 );
 
     logic [DATA_WIDTH-1:0] mem [DEPTH-1:0];
