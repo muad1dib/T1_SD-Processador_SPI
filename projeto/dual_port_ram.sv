@@ -3,7 +3,7 @@ module dual_port_ram #(
     parameter DATA_WIDTH = 32,
     parameter DEPTH = 1 << ADDR_WIDTH
 )(
-    input  logic              clk,
+    input  logic            clk,
     dual_port_ram_port_if.MEM a,
     dual_port_ram_port_if.MEM b
 );
