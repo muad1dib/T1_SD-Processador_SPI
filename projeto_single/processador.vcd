@@ -1,0 +1,875 @@
+$date
+	Thu Sep 25 20:06:01 2025
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_processador $end
+$var reg 1 ! clock $end
+$var reg 1 " reset $end
+$var reg 16 # last_pc [15:0] $end
+$var reg 2 $ last_state [1:0] $end
+
+$scope module mem_inst $end
+$var parameter 32 % ADDR_WIDTH $end
+$var parameter 32 & DATA_WIDTH $end
+$var parameter 32 ' DEPTH $end
+$var wire 1 ( clk $end
+$upscope $end
+
+$scope module cpu $end
+$var wire 1 ) clock $end
+$var wire 1 * reset $end
+$var reg 32 + instrucao_atual [31:0] $end
+$var reg 4 , opcode [3:0] $end
+$var reg 4 - rd [3:0] $end
+$var reg 4 . rs1 [3:0] $end
+$var reg 4 / rs2 [3:0] $end
+$var reg 32 0 operand_a [31:0] $end
+$var reg 32 1 operand_b [31:0] $end
+$var reg 32 2 resultado [31:0] $end
+$var reg 16 3 PC [15:0] $end
+$var reg 2 4 cycle_counter [1:0] $end
+$var reg 2 5 current_state [1:0] $end
+
+$scope module rb_inst $end
+$var parameter 32 6 REG_WIDTH $end
+$var parameter 32 7 REG_COUNT $end
+$var wire 1 ) clk $end
+$var wire 1 8 rst_n $end
+$upscope $end
+
+$scope module alu_inst $end
+$var parameter 4 9 OP_ADD $end
+$var parameter 4 : OP_SUB $end
+$var parameter 4 ; OP_AND $end
+$var parameter 4 < OP_OR $end
+$var parameter 4 = OP_XOR $end
+$var parameter 4 > OP_NOT $end
+$var parameter 4 ? OP_SHL $end
+$var parameter 4 @ OP_SHR $end
+$var wire 1 ) clock $end
+$var wire 1 * reset $end
+$var reg 32 A operand_a [31:0] $end
+$var reg 32 B operand_b [31:0] $end
+$var reg 4 C opcode [3:0] $end
+$var reg 32 D result [31:0] $end
+$var reg 32 E alu_result [31:0] $end
+$var reg 1 F zero $end
+$var reg 1 G carry $end
+$var reg 1 H overflow $end
+$var reg 3 I current_state [2:0] $end
+$var reg 3 J next_state [2:0] $end
+$var reg 6 K bit_counter [5:0] $end
+$var reg 32 L spi_shift_reg [31:0] $end
+$var reg 33 M add_sub [32:0] $end
+$var reg 32 N logic_out [31:0] $end
+$var reg 1 O add_carry $end
+$var reg 1 P sub_carry $end
+$var reg 1 Q add_overflow $end
+$var reg 1 R sub_overflow $end
+$upscope $end
+
+$scope module mul_inst $end
+$var parameter 4 S OP_MUL $end
+$var wire 1 ) clock $end
+$var wire 1 * reset $end
+$var reg 32 T operand_a [31:0] $end
+$var reg 32 U operand_b [31:0] $end
+$var reg 4 V opcode [3:0] $end
+$var reg 64 W mul_result_full [63:0] $end
+$var reg 32 X result [31:0] $end
+$var reg 3 Y current_state [2:0] $end
+$var reg 3 Z next_state [2:0] $end
+$var reg 6 [ bit_counter [5:0] $end
+$var reg 32 \ spi_shift_reg [31:0] $end
+$upscope $end
+
+$scope module bas_inst $end
+$var parameter 32 ] REG_WIDTH $end
+$var parameter 4 ^ OP_SHL $end
+$var parameter 4 _ OP_SHR $end
+$var wire 1 ) clock $end
+$var wire 1 * reset $end
+$var reg 32 ` operand_a [31:0] $end
+$var reg 32 a operand_b [31:0] $end
+$var reg 4 b opcode [3:0] $end
+$var reg 32 c result [31:0] $end
+$var reg 32 d shift_result [31:0] $end
+$var reg 3 e current_state [2:0] $end
+$var reg 3 f next_state [2:0] $end
+$var reg 6 g bit_counter [5:0] $end
+$var reg 32 h spi_shift_reg [31:0] $end
+$var reg 1 i operation_done $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+b0 A
+b0 B
+b0 C
+b0 D
+b0 E
+1F
+0G
+0H
+b0 I
+b0x J
+b0 K
+b0 L
+b0 M
+b0 N
+0O
+0P
+0Q
+0R
+b0 T
+b0 U
+b0 V
+b0 W
+b0 X
+b0 Y
+b0x Z
+b0 [
+b0 \
+b0 `
+b0 a
+b0 b
+b0 c
+b0 d
+b0 e
+b0 f
+b0 g
+b0 h
+0i
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 5
+b1111111111111111 #
+b11 $
+b1000 %
+b100000 &
+b100000000 '
+b100000 6
+b10000 7
+b0 9
+b1 :
+b10 ;
+b11 <
+b100 =
+b101 >
+b110 ?
+b111 @
+b1001 S
+b100000 ]
+b110 ^
+b111 _
+0(
+0)
+1*
+08
+$end
+#5
+1!
+1)
+1(
+#10
+0!
+0)
+0(
+#15
+1!
+1)
+1(
+#20
+0!
+0)
+0(
+#25
+1!
+1)
+1(
+#30
+0!
+0)
+0(
+#35
+1!
+1)
+1(
+#40
+0!
+0)
+0(
+#45
+1!
+1)
+1(
+0"
+0*
+18
+#50
+0!
+0)
+0(
+#55
+1!
+1)
+1(
+b0 #
+b0 $
+b0x I
+b0x Y
+b1 4
+b0 Z
+b0 J
+#60
+0!
+0)
+0(
+#65
+1!
+1)
+1(
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#70
+0!
+0)
+0(
+#75
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b1001000110000000000000111 +
+b1 -
+b10 .
+b11 /
+b0 Z
+b0 J
+#80
+0!
+0)
+0(
+#85
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b111 0
+b111 2
+b0x Z
+b0x J
+#90
+0!
+0)
+0(
+#95
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b1 3
+b0 Z
+b0 J
+#100
+0!
+0)
+0(
+#105
+1!
+1)
+1(
+b1 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#110
+0!
+0)
+0(
+#115
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b10010001101000000000000000000 +
+b1 ,
+b10 -
+b11 .
+b100 /
+b0 Z
+b0 J
+#120
+0!
+0)
+0(
+#125
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0 0
+b0 2
+b0x Z
+b0x J
+#130
+0!
+0)
+0(
+#135
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b10 3
+b0 Z
+b0 J
+#140
+0!
+0)
+0(
+#145
+1!
+1)
+1(
+b10 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#150
+0!
+0)
+0(
+#155
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b10101011110011010000000000000000 +
+b1010 ,
+b1011 -
+b1100 .
+b1101 /
+b0 Z
+b0 J
+#160
+0!
+0)
+0(
+#165
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#170
+0!
+0)
+0(
+#175
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b11 3
+b0 Z
+b0 J
+#180
+0!
+0)
+0(
+#185
+1!
+1)
+1(
+b11 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#190
+0!
+0)
+0(
+#195
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 /
+b0 Z
+b0 J
+#200
+0!
+0)
+0(
+#205
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#210
+0!
+0)
+0(
+#215
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b100 3
+b0 Z
+b0 J
+#220
+0!
+0)
+0(
+#225
+1!
+1)
+1(
+b100 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#230
+0!
+0)
+0(
+#235
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#240
+0!
+0)
+0(
+#245
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#250
+0!
+0)
+0(
+#255
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b101 3
+b0 Z
+b0 J
+#260
+0!
+0)
+0(
+#265
+1!
+1)
+1(
+b101 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#270
+0!
+0)
+0(
+#275
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#280
+0!
+0)
+0(
+#285
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#290
+0!
+0)
+0(
+#295
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b110 3
+b0 Z
+b0 J
+#300
+0!
+0)
+0(
+#305
+1!
+1)
+1(
+b110 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#310
+0!
+0)
+0(
+#315
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#320
+0!
+0)
+0(
+#325
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#330
+0!
+0)
+0(
+#335
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b111 3
+b0 Z
+b0 J
+#340
+0!
+0)
+0(
+#345
+1!
+1)
+1(
+b111 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#350
+0!
+0)
+0(
+#355
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#360
+0!
+0)
+0(
+#365
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#370
+0!
+0)
+0(
+#375
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b1000 3
+b0 Z
+b0 J
+#380
+0!
+0)
+0(
+#385
+1!
+1)
+1(
+b1000 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#390
+0!
+0)
+0(
+#395
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#400
+0!
+0)
+0(
+#405
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#410
+0!
+0)
+0(
+#415
+1!
+1)
+1(
+b11 $
+b0x I
+b0x Y
+b0 5
+b1 4
+b1001 3
+b0 Z
+b0 J
+#420
+0!
+0)
+0(
+#425
+1!
+1)
+1(
+b1001 #
+b0 $
+b0 I
+b0 Y
+b1 5
+b10 4
+b0x Z
+b0x J
+#430
+0!
+0)
+0(
+#435
+1!
+1)
+1(
+b1 $
+b0x I
+b0x Y
+b10 5
+b11 4
+b0 Z
+b0 J
+#440
+0!
+0)
+0(
+#445
+1!
+1)
+1(
+b10 $
+b0 I
+b0 Y
+b11 5
+b0 4
+b0x Z
+b0x J
+#450
+0!
+0)
+0(
+#455
+1!
+1)
+1(
+b11 $
