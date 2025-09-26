@@ -1,12 +1,10 @@
-# ======================================
-# Script de Simulação - Processador T1
-# ======================================
-
 quit -sim
 .main clear
 
 vlib work
 vmap work work
+
+echo "== Trabalho 1 - Sistemas Digitais: Processador com SPI =="
 
 echo "=== Compilando arquivos ==="
 vlog -sv [pwd]/spi/spi_if.sv
@@ -89,5 +87,6 @@ wave zoom full
 echo "=== ANÁLISE COMPLETA ==="
 echo "Use 'run 100ns' para continuar a simulação se necessário"
 echo "Use 'restart -f' para reiniciar a simulação"
+
 
 
