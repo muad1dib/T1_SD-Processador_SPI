@@ -9,16 +9,16 @@ vlib work
 vmap work work
 
 echo "=== Compilando arquivos ==="
-vlog -sv spi_if.sv
-vlog -sv regbank_if.sv  
-vlog -sv regbank.sv
-vlog -sv single_port_ram_port_if.sv
-vlog -sv single_port_ram.sv
-vlog -sv alu_spi.sv
-vlog -sv multiplicador.sv
-vlog -sv shifter.sv
-vlog -sv cpu.sv
-vlog -sv tb_cpu.sv
+vlog -sv [pwd]/spi/spi_if.sv
+vlog -sv [pwd]/regbank/regbank_if.sv  
+vlog -sv [pwd]/regbank/regbank.sv
+vlog -sv [pwd]/memory/single_port_ram_port_if.sv
+vlog -sv [pwd]/memory/single_port_ram.sv
+vlog -sv [pwd]/spi/alu_spi.sv
+vlog -sv [pwd]/spi/multiplier.sv
+vlog -sv [pwd]/spi/barrel_shifter.sv
+vlog -sv [pwd]/cpu/cpu.sv
+vlog -sv [pwd]/cpu/tb_cpu.sv
 
 echo "=== Iniciando simulação ==="
 vsim -voptargs=+acc tb_cpu
@@ -89,4 +89,5 @@ wave zoom full
 echo "=== ANÁLISE COMPLETA ==="
 echo "Use 'run 100ns' para continuar a simulação se necessário"
 echo "Use 'restart -f' para reiniciar a simulação"
+
 
