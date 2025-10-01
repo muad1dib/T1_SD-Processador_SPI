@@ -72,21 +72,16 @@ Inclusive **solicitamos ajuda ao professor**, mas até o momento não conseguimo
 
 
 ### Forma de Onda Completa - 1:
+<img width="1794" height="736" alt="image" src="https://github.com/user-attachments/assets/91561346-a825-4ab1-8226-1834b799819d" />
+
 
 ### Forma de Onda Completa - 2:
+<img width="1797" height="737" alt="image" src="https://github.com/user-attachments/assets/901c63f2-72b6-4a81-9d4b-99e34ce5ec41" />
 
 
-### Instrução: ADD
-![Forma de onda - ADD](caminho/para/imagem_add.png)
+### Forma de Onda Completa - 3:
+<img width="1801" height="537" alt="image" src="https://github.com/user-attachments/assets/28b3e81a-b5ec-4c11-9051-27b544bbaf06" />
 
-### Instrução: SUB
-![Forma de onda - SUB](caminho/para/imagem_sub.png)
-
-### Instrução: MUL
-![Forma de onda - MUL](caminho/para/imagem_mul.png)
-
-### Instrução: SHL/SHR
-![Forma de onda - SHIFT](caminho/para/imagem_shift.png)
 
 ---
 
