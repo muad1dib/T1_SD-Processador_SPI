@@ -13,7 +13,7 @@ module cpu(
     spi_if bas_spi(clock, reset);
 
     alu           alu_inst(clock, reset, alu_spi.SLAVE);
-    multiplicador mul_inst(clock, reset, mul_spi.SLAVE);
+    multiplier mul_inst(clock, reset, mul_spi.SLAVE);
     barrel_shifter bas_inst(clock, reset, bas_spi.SLAVE);
 
     logic [31:0] instrucao_atual;
@@ -350,5 +350,6 @@ module cpu(
             rb_if.we <= 1'b0;
         end
     end
+
 
 endmodule
