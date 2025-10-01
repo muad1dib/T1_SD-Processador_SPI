@@ -59,7 +59,7 @@ Inclusive **solicitamos ajuda ao professor**, mas até o momento não conseguimo
 1. Abra o Questa/ModelSim
 2. No console, navegue até o diretório:
    ```
-   cd /caminho/para/T4_SD
+   cd /caminho/para/cpu_spj
    ```
 3. Execute o script de simulação:
    ```
