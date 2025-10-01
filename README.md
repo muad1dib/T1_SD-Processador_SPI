@@ -68,8 +68,6 @@ Inclusive **solicitamos ajuda ao professor**, mas até o momento não conseguimo
 
 ## 6. Resultados da Simulação
 
-*[As imagens das formas de onda serão incluídas abaixo]*
-
 
 ### Forma de Onda Completa - 1:
 <img width="1794" height="736" alt="image" src="https://github.com/user-attachments/assets/91561346-a825-4ab1-8226-1834b799819d" />
