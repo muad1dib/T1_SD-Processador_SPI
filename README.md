@@ -44,7 +44,7 @@ Atualmente, o projeto está **travado em um problema crítico relacionado ao SPI
 
 - As instruções são **corretamente buscadas** (FETCH) e **decodificadas** (DECODE)
 - Porém, **nenhuma instrução gera resultado correto** no banco de registradores
-- Mesmo operações básicas como **ADD não funcionam**
+- Mesmo operações básicas como **ADD não funcionam** corretamente
 - A origem do problema está nos sinais **MISO/MOSI** do protocolo SPI
 
 Tentamos diversas abordagens para corrigir:
